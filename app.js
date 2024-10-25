@@ -15,3 +15,12 @@ function renderTodos() {
         todoList.appendChild(li);
     });
 }
+
+// Ajouter une tâche
+function addTodo() {
+    const task = document.getElementById('todoInput').value;
+    if (!task) return;
+    todos.push({ id: Date.now(), task });
+    document.getElementById('todoInput').value = '';
+    renderTodos();
+}
